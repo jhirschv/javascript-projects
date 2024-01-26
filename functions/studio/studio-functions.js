@@ -1,7 +1,21 @@
 //We want to COMPLETELY reverse an array by flipping the order of the entries AND flipping the order of characters in each element.
 
 // Part One: Reverse Characters
+function reverseCharacters (stringToReverse) {
+    if (typeof stringToReverse == 'string') {
+        let reversedString = stringToReverse.split('').reverse().join('')
+        return reversedString
 
+    } else if (typeof stringToReverse == 'number'){
+        let numberToString = stringToReverse.toString()
+        let reversedString = numberToString.split('').reverse().join('')
+        return reversedString
+    }
+    
+}
+
+let stringForFunction = 5
+reverseCharacters(stringForFunction)
 // 1. Define the function as reverseCharacters. Give it one parameter, which will be the string to reverse.
 // 2. Within the function, split the string into an array, then reverse the array.
 // 3. Use join to create the reversed string and return that string from the function.
@@ -30,6 +44,17 @@ let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
 
+
+
+function reverseItemsInArray(arrayToUse) {
+    let emptyArray = []
+    for (let i = 0; i < arrayToUse.length; i++) {
+        emptyArray.push(reverseCharacters(arrayToUse[i]))
+    }
+    return emptyArray.reverse('')
+}
+
+console.log(reverseItemsInArray(arrayTest1))
 // Bonus Missions
 
 // 1. Have a clear, descriptive name like funPhrase.
