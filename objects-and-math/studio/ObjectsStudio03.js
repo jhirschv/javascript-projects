@@ -50,5 +50,30 @@ let candidateA = {
    'astronautID':890
  };
  
- let crew = [candidateB,candidateD,candidateF];
+let crew = [candidateB,candidateD,candidateF];
+
+crewMass = (crew) => {
+  totalMass = 0
+  for(let i = 0; i < crew.length; i++) {
+    totalMass = totalMass + crew[i].mass
+  }
+  return Math.round(totalMass*10)/10
+ 
+}
+
+fuelRequired = () => {
+  let massOfRocket = 75000
+  let massOfCrew = crewMass(crew)
+  totalFuelNeeded = 9 * massOfRocket + massOfCrew
+  for(let i = 0; i < crew.length; i ++) {
+    if(crew[i].species == 'cat' || crew[i].species == 'dog') {
+      totalFuelNeeded = totalFuelNeeded + 200
+    } else {
+      totalFuelNeeded = totalFuelNeeded + 100
+    }
+  }
+  return Math.round(totalFuelNeeded)
+}
+
+console.log(fuelRequired())
  
