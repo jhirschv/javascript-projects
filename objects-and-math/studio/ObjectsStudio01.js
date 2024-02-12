@@ -1,5 +1,8 @@
 // Code your selectRandomEntry function here:
-selectRandomEntry = (array) => {
+let idNumbers = [291, 414, 503, 599, 796, 890];
+
+
+function selectRandomEntry(array) {
   let selectedIds = []
   while (selectedIds.length < 3) {
     let index = Math.floor(Math.random() * array.length)
@@ -9,7 +12,7 @@ selectRandomEntry = (array) => {
   }
   return selectedIds
 }
-
+console.log(selectRandomEntry(idNumbers))
 
 buildCrewArray = (ids, canidates) => {
   let crew = []
@@ -25,7 +28,7 @@ buildCrewArray = (ids, canidates) => {
 // Code your buildCrewArray function here:
 
 
-let idNumbers = [291, 414, 503, 599, 796, 890];
+
 
 // Here are the candidates and the 'animals' array:
 let candidateA = {
@@ -74,5 +77,5 @@ let candidateF = {
 let animals = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF];
 
 // Code your template literal and console.log statements:
-const [member1, member2, member3] = buildCrewArray(selectRandomEntry(idNumbers), animals)
-console.log(`${member1.name}, ${member2.name}, and ${member3.name} are going to space!`)
+//const [member1, member2, member3] = buildCrewArray(selectRandomEntry(idNumbers), animals)
+//console.log(`${member1.name}, ${member2.name}, and ${member3.name} are going to space!`)

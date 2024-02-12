@@ -1,12 +1,12 @@
 // Code your orbitCircumference function here:
-orbitCircumference = (radius) => {
+function orbitCircumference (radius) {
   return Math.round(2 * Math.PI * radius)
 }
 
 
 
 // Code your missionDuration function here:
-missionDuration = (numOfOrbits, orbitRadius, speed) => {
+function missionDuration (numOfOrbits, orbitRadius, speed) {
   let circumfrence = orbitCircumference(orbitRadius)
   let totalDistance = circumfrence * numOfOrbits
   let duration = totalDistance / speed

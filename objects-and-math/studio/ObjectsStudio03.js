@@ -62,9 +62,9 @@ crewMass = (crew) => {
 }
 
 fuelRequired = () => {
-  let massOfRocket = 75000
+  const massOfRocket = 75000
   let massOfCrew = crewMass(crew)
-  totalFuelNeeded = 9 * massOfRocket + massOfCrew
+  totalFuelNeeded = 9.5 * massOfRocket + massOfCrew
   for(let i = 0; i < crew.length; i ++) {
     if(crew[i].species == 'cat' || crew[i].species == 'dog') {
       totalFuelNeeded = totalFuelNeeded + 200
@@ -72,7 +72,7 @@ fuelRequired = () => {
       totalFuelNeeded = totalFuelNeeded + 100
     }
   }
-  return Math.round(totalFuelNeeded)
+  return `The mission has a launch mass of ${massOfRocket + massOfCrew} kg and requires ${Math.ceil(totalFuelNeeded)} kg of fuel.`
 }
 
 console.log(fuelRequired())
